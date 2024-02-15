@@ -3,12 +3,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const mongoContact = require('mongoose')
 const mongoAgreement = require('mongoose')
+require('dotenv').config();
 
 main().catch(err=>console.log(err));
 async function main(){
     console.log('Connected to Database');
-    await mongoContact.connect("mongodb+srv://ashutoshvishwakarma208:sds2023%40secure@cluster0.gltlzkh.mongodb.net/ContactForms?retryWrites=true&w=majority")
-    await mongoAgreement.createConnection("mongodb+srv://ashutoshvishwakarma208:sds2023%40secure@cluster0.gltlzkh.mongodb.net/AgreementForms?retryWrites=true&w=majority")
+    await mongoContact.connect(process.env.MONGODB_URI1)
+    await mongoAgreement.createConnection(process.env.MONGODB_URI2)
 }
 
 const contactSchema = new mongoContact.Schema({
