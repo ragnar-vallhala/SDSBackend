@@ -160,6 +160,6 @@ server.post('/agreement-form', async (req,res)=>{
     res.send(doc);
 })
 
-server.listen(8080,()=>{
+server.listen(8000,()=>{
     console.log('Server Started')
 })
