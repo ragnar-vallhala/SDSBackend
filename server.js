@@ -101,7 +101,7 @@ server.post('/admin-getContact',async(req,res)=>{
     }
 })
 
-server.post('api/admin-getAgreement',async(req,res)=>{
+server.post('/admin-getAgreement',async(req,res)=>{
     try{
         let data = await AgreementForm.find(req.body)
         res.send(data);
