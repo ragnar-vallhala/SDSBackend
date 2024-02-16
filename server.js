@@ -70,7 +70,7 @@ server.use(cors());
 server.use(bodyParser.json());
 
 
-server.post('/contact-form', async (req,res)=>{
+server.post('api/contact-form', async (req,res)=>{
     let contactForm = new ContactForm();
     contactForm.Name = req.body.Name;
     contactForm.Email = req.body.Email;
@@ -81,7 +81,7 @@ server.post('/contact-form', async (req,res)=>{
     res.send(contactForm);
 })
 
-server.post('/admin-login', async (req,res)=>{
+server.post('api/admin-login', async (req,res)=>{
     if(req.body.username=='frankservice' && req.body.password=='secure123'){
         res.send(true);
     }
@@ -91,7 +91,7 @@ server.post('/admin-login', async (req,res)=>{
   
 })
 
-server.post('/admin-getContact',async(req,res)=>{
+server.post('api/admin-getContact',async(req,res)=>{
     try{
         let data = await ContactForm.find(req.body)
         res.send(data);
@@ -101,7 +101,7 @@ server.post('/admin-getContact',async(req,res)=>{
     }
 })
 
-server.post('/admin-getAgreement',async(req,res)=>{
+server.post('api/admin-getAgreement',async(req,res)=>{
     try{
         let data = await AgreementForm.find(req.body)
         res.send(data);
@@ -115,7 +115,7 @@ server.post('/admin-getAgreement',async(req,res)=>{
 
 
 
-server.post('/agreement-form', async (req,res)=>{
+server.post('api/agreement-form', async (req,res)=>{
     let agreementForm = new AgreementForm();
     agreementForm.Name=req.body.Name;
     agreementForm.Country=req.body.Country;
