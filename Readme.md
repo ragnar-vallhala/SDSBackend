@@ -35,9 +35,8 @@ npm i
 ```
 node server.js
 ```
-<center>
-<b>OR</b>
-</center>
+
+**OR**
 
 2. With Nodemon (recommended)
 ```
